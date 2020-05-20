@@ -1,0 +1,49 @@
+.banner-lyrbgbtm2{
+    margin:10px 0px;
+	padding:0px 0px 19px 11px;
+	position:absolute;
+	background:url(../images/layer-bg-corner.png) left top no-repeat;
+	}	
+	
+.banner-lyrbgbtm2 h3{
+    margin:0px 0px 0px 0px;
+	padding:6px 15px 25px 15px;
+	font-size:25px;
+	color:#FFF;
+	font-weight:normal;
+	/*border-right:1px solid #BD6213;*/
+	background:url(../images/h3bg.png) right top no-repeat;
+	}	
+	
+.list-pro-box{
+   margin:0px 0px 0px 0px;
+   padding:84px 0px 0px 0px;
+   float:left;
+}
+.trans-product{
+         margin:0px 0px 0px 0px;
+	     padding:15px 26px 0px 0px;
+		 float:left;
+		 width:260px;
+		  }	
+		  
+
+		 
+.trans-product img, .trans-product-right img{margin:0px 0px 5px 0px;padding:2px;border:1px solid #BBBBBB;display:block;}	
+.trans-product img:hover, .trans-product-right img:hover{border:1px solid #FF6600;display:block;}			 		  
+.trans-product a, .trans-product-right a{margin:0px 0px 0px 0px;padding:0px 0px 0px 6px;color:#444444;font-size:15px;font-weight:bold;display:block;text-decoration:none; }	
+.trans-product a:hover, .trans-product-right a:hover{color:#E87A1B;text-decoration:none;}	
+.trans-product a:active, .trans-product-right a:active{color:#E87A1B;text-decoration:none; }				  	
+.trans-product .cn_txt, .trans-product-right .cn_txt{margin:0px 0px 0px 0px;padding:6px 0px 0px 6px;color:#444444;font-size:12px;line-height:18px;text-decoration:none; }	
+
+.trans-product-right{
+         margin:0px 0px 0px 0px;
+	     padding:15px 0px 0px 0px;
+		 float:right;
+		 width:260px;
+		  }	
+		  
+		  .clr {
+     margin:0; padding:0;
+     clear:both;
+     }

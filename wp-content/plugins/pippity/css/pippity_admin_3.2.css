@@ -1,0 +1,18 @@
+.pty_headLink {
+	font-size: 14px !important;
+	margin-top: 1px;
+	text-decoration: none;
+}
+
+#pty_analyticsContent #pty_rangeShell {
+	left: 349px;
+	top: -2px;
+}
+
+#pty_sugmsg {
+	margin-top:-2px;
+}
+
+body.admin-bar #pty_ajaxMsg {
+	top:27px;
+}

@@ -1,0 +1,119 @@
+.pty_pkg div, 
+.pty_pkg span, 
+.pty_pkg applet, 
+.pty_pkg object, 
+.pty_pkg iframe, 
+.pty_pkg h1, 
+.pty_pkg h2, 
+.pty_pkg h3, 
+.pty_pkg h4, 
+.pty_pkg h5, 
+.pty_pkg h6, 
+.pty_pkg p, 
+.pty_pkg blockquote, 
+.pty_pkg pre, 
+.pty_pkg a, 
+.pty_pkg abbr, 
+.pty_pkg acronym, 
+.pty_pkg address, 
+.pty_pkg big, 
+.pty_pkg cite, 
+.pty_pkg code, 
+.pty_pkg del, 
+.pty_pkg dfn, 
+.pty_pkg em, 
+.pty_pkg font, 
+.pty_pkg img, 
+.pty_pkg ins, 
+.pty_pkg kbd, 
+.pty_pkg q, 
+.pty_pkg s, 
+.pty_pkg samp, 
+.pty_pkg small, 
+.pty_pkg strike, 
+.pty_pkg strong, 
+.pty_pkg sub, 
+.pty_pkg sup, 
+.pty_pkg tt, 
+.pty_pkg var, 
+.pty_pkg b, 
+.pty_pkg u, 
+.pty_pkg i, 
+.pty_pkg center, 
+.pty_pkg dl, 
+.pty_pkg dt, 
+.pty_pkg dd, 
+.pty_pkg ol, 
+.pty_pkg ul, 
+.pty_pkg li, 
+.pty_pkg fieldset, 
+.pty_pkg form, 
+.pty_pkg label, 
+.pty_pkg legend, 
+.pty_pkg table, 
+.pty_pkg caption, 
+.pty_pkg tbody, 
+.pty_pkg tfoot, 
+.pty_pkg thead, 
+.pty_pkg input, 
+.pty_pkg tr, 
+.pty_pkg th,                              
+.pty_pkg td{
+	background-color:transparent;
+	background-image:none;
+	border:0 none;
+	clear:none;
+	font-size:18px;
+	letter-spacing:0;
+	line-height:100%;
+	list-style:none outside none !important;
+	margin:0;
+	outline:0 none;
+	padding:0;
+	text-align:left;
+	text-decoration:none;
+	text-indent:0;
+	-moz-box-shadow:0 0 0;
+	box-shadow:0 0 0;
+	-webkit-box-shadow:0 0 0;
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+}
+#pty_overlay{ 
+	position:fixed; 
+	z-index:100000; 
+	height:100%; 
+	width:100%; 
+	top:0; 
+	left:0;
+}
+#pty_popup{ 
+	position:fixed; 
+	z-index:100001; 
+}
+#pty_submit{
+	cursor:pointer
+}
+.pty_pkg input{
+	padding:0; margin:0;
+}
+.pty_input {
+   -moz-box-sizing:    content-box;
+   -webkit-box-sizing: content-box;
+    box-sizing:        content-box;
+} 
+#pty_preload{
+	display:none;
+}
+.pty_fontload{
+	width:1px;
+	height:1px;
+	overflow:hidden;
+	position:absolute;
+	top:-9999px;
+	left:-9999px;
+}
+#pty_afflink{
+	display:none;
+}
