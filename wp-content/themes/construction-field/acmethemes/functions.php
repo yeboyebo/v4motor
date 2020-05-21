@@ -282,3 +282,13 @@ function customFormatGallery($string,$attr){
 	//Elimino Galeria y la añado directamente en plantilla
     return '<div></div>';
 }
+
+add_filter('body_class','my_class_names');
+function my_class_names($classes) {
+	//Si es una ordenacion, cambio la clase
+	if(isset($_GET['sfid'])){
+		$classes = str_replace('blog', 'category',$classes );
+	}
+
+    return $classes;
+}

@@ -15,6 +15,7 @@ global $construction_field_customizer_all_values;
 			<?php //construction_field_breadcrumbs();?>
 			<?php echo do_shortcode('[do_widget id=nav_menu-2]'); ?>
 			<?php echo do_shortcode('[do_widget id=nav_menu-3]'); ?>
+			<?php echo do_shortcode( '[searchandfilter id="1229"]' ); ?>
 		</div>
 	</div>
 <div id="content" class="site-content container clearfix">
@@ -24,6 +25,8 @@ global $construction_field_customizer_all_values;
 		echo '<div id="primary-wrap" class="clearfix">';
 	}
 	?>
+
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<?php

@@ -220,7 +220,7 @@ if ( ! function_exists( 'construction_field_header' ) ) :
                 <div class="site-description-wrapper col-md-8">
                     <?php if ( 1== $construction_field_display_site_tagline  ):
                             $description = get_bloginfo( 'description', 'display' );
-                            if ( ($description || is_customize_preview()) && !is_category() && !is_search() && !is_single()  ) : ?>
+                            if ( ($description || is_customize_preview()) && !is_category() && !is_search() && !is_single()  && !is_search() && !isset($_GET['sfid']) ) : ?>
                                 <p class="site-description"><?php echo esc_html( $description ); ?></p>
                     <?php else:?>
                         <div  class="buscador-header">

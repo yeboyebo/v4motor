@@ -2288,6 +2288,9 @@ Service Widget
 	.site-content{
 		margin-top: 2em;
 	}
+	.category .site-content{
+		margin-top: 150px;
+	}
 	.inner-main-title{
 		margin-bottom: 30px;
 	}
@@ -2449,7 +2452,7 @@ article.post,
 article.page{
 	text-align: left;
 	position: relative;
-	z-index: 5;
+	z-index: -1;
 	padding-bottom: 15px;
 }
 .archive .post{
@@ -3088,10 +3091,10 @@ html{
 	padding-right: 7.5px;
 }
 .page-menu{
-	height: 50px;
+	height: 40px;
 	float: left;
 	width: 100%;
-	background: #d3d3d3;
+	background: #eeeeee;
 	margin-bottom: 30px;
 }
 .page-menu .crumb{
@@ -3988,6 +3991,116 @@ input:focus{
     margin: auto;
     padding: 0px;
 }
+.page-menu .searchandfilter{
+	width: max-content;
+    float: right;
+	margin-top: -5px;
+	margin-right: 30px;
+}
+.page-menu .searchandfilter select, .page-menu .searchandfilter select:focus{
+	background: none;
+    border: none;
+    max-width: 100%;
+    padding: 5px 15px;
+    color: #316199;
+    font-size: 14px;
+}
+#menu-vehiculos .menu-item-1207:hover::after{
+	background: url('http://local.volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Furgonetas_peq.png') center no-repeat;
+	background-size: 110px;
+	content:"";
+	width: 100px;
+	height: 80px;
+	display: block;
+	top: 0px;
+	left:-40px;
+	background-color: #eeeeee;
+	z-index: 1000000;
+}
+#menu-vehiculos .menu-item-1206:hover::after{
+	background: url('http://local.volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Furgonetas.png') center no-repeat;
+	background-size: 110px;
+	content:"";
+	width: 100px;
+	height: 80px;
+	display: block;
+	top: 0px;
+	left:-40px;
+	background-color: #eeeeee;
+	z-index: 1000000;
+}
+#menu-vehiculos .menu-item-1204:hover::after{
+	background: url('http://local.volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Camper.png') center no-repeat;
+	background-size: 110px;
+	content:"";
+	width: 100px;
+	height: 80px;
+	display: block;
+	top: 0px;
+	left:-40px;
+	background-color: #eeeeee;
+	z-index: 1000000;
+}
+#menu-vehiculos .menu-item-1208:hover::after{
+	background: url('http://local.volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Isotermo.png') center no-repeat;
+	background-size: 110px;
+	content:"";
+	width: 100px;
+	height: 80px;
+	display: block;
+	top: 0px;
+	left:-40px;
+	background-color: #eeeeee;
+	z-index: 1000000;
+}
+#menu-vehiculos .menu-item-1205:hover::after{
+	background: url('http://local.volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Carrozado.png') center no-repeat;
+	background-size: 110px;
+	content:"";
+	width: 100px;
+	height: 80px;
+	display: block;
+	top: 0px;
+	left:-40px;
+	background-color: #eeeeee;
+	z-index: 1000000;
+}
+#menu-vehiculos .menu-item-1209:hover::after{
+	background: url('http://local.volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Monovolumen.png') center no-repeat;
+	background-size: 110px;
+	content:"";
+	width: 100px;
+	height: 80px;
+	display: block;
+	top: 0px;
+	left:-40px;
+	background-color: #eeeeee;
+	z-index: 1000000;
+}
+#menu-vehiculos .menu-item-1210:hover::after{
+	background: url('http://local.volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/suv.png') center no-repeat;
+	background-size: 110px;
+	content:"";
+	width: 120px;
+	height: 80px;
+	display: block;
+	top: 0px;
+	left:-40px;
+	background-color: #eeeeee;
+	z-index: 1000000;
+}
+#menu-vehiculos .menu-item-1211:hover::after{
+	background: url('http://local.volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Turismos.png') center no-repeat;
+	background-size: 100px;
+	content:"";
+	width: 120px;
+	height: 80px;
+	display: block;
+	top: 0px;
+	left:-40px;
+	background-color: #eeeeee;
+	z-index: 1000000;
+}
 @media only screen and (max-width: 670px) {
 	body{
 		margin-top: -15px;
@@ -4146,7 +4259,7 @@ input:focus{
 		margin-right: 15px;
 	}
 	.page-menu{
-		height: 80px;
+		height: 120px;
 		margin-bottom: 15px;
 	}
 	.caracteristicas div, .entry-content .caracteristicas{
@@ -4178,5 +4291,27 @@ input:focus{
 	}
   	.descripcion{
 	  	padding-right: 15px;
+	  }
+	  .page-menu .searchandfilter{
+		width: 100%;
+		display: block;
+		position: relative;
+		top: 80px;
+		right: -120px;
+
+	  }
+	  .buscador-header input{
+		  max-width: 90%;
+		  margin-top:0;
+		  margin-bottom: 30px;
+	  }
+	  .buscador-header i{
+		  top:5px;
+	  }
+	  .buscador-header{
+		  width: fit-content;
+	  }
+	  #menu-vehiculos li:hover::after{
+		  display: none;
 	  }
 }

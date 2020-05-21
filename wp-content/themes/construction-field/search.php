@@ -10,8 +10,12 @@
 get_header();
 global $construction_field_customizer_all_values;
 ?>
+<div class="page-menu">
 <?php echo do_shortcode('[do_widget id=nav_menu-2]'); ?>
-<div class="wrapper inner-main-title">
+<?php echo do_shortcode('[do_widget id=nav_menu-3]'); ?>
+<?php echo do_shortcode( '[searchandfilter id="1229"]' ); ?>
+</div>
+<!--div class="wrapper inner-main-title">
 	<?php
 	echo construction_field_get_header_normal_image();
 	?>
@@ -22,12 +26,12 @@ global $construction_field_customizer_all_values;
 			<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'construction-field' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			<?php
 			if( 1 == $construction_field_customizer_all_values['construction-field-show-breadcrumb'] ){
-				construction_field_breadcrumbs();
+				//construction_field_breadcrumbs();
 			}
 			?>
-		</header><!-- .entry-header -->
+		</header>
 	</div>
-</div>
+</div-->
 <div id="content" class="site-content container clearfix category">
 	<?php
 	$sidebar_layout = construction_field_sidebar_selection();
