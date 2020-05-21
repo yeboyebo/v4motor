@@ -99,22 +99,20 @@ if ( ! function_exists( 'construction_field_footer' ) ) :
                         <div class="col-md-3 col-xs-6">
                             <ul>
                                 <ol><strong>Catálogo de vehiculos</strong></ol>
-                                <ol><a href="/catalogo-de-vehiculos/furgoneta-vivienda.html">Furgoneta Vivienda y Camper</a></ol>
-                                <ol><a href="/catalogo-de-vehiculos/monovolumenes.html">Monovolúmenes</a></ol>
-                                <ol><a href="/catalogo-de-vehiculos/vehiculo-de-ocio.html">Furgos de Ocio y Familiares</a></ol>
-                                <ol><a href="/catalogo-de-vehiculos/furgonetas.html">Furgos pequeñas</a></ol>
-                                <ol><a href="/catalogo-de-vehiculos/furgonetas-medianas-y-grandes.html">Furgos Medianas y Grandes</a></ol>
-                                <ol><a href="/catalogo-de-vehiculos/carrozados.html">Furgos Carrozados</a></ol>
-                                <ol><a href="/catalogo-de-vehiculos/isotermos.html">Furgos Isotermos+Frio</a></ol>
-                                <ol><a href="/catalogo-de-vehiculos/turismos.html">Turismos</a></ol>
+                                <ol><a href="/category/vehiculos/camper/">Furgoneta Vivienda y Camper</a></ol>
+                                <ol><a href="/category/vehiculos/monovolumen/">Monovolúmenes</a></ol>
+                                <ol><a href="/category/vehiculos/furgonetas-pequenas/">Furgos pequeñas</a></ol>
+                                <ol><a href="/category/vehiculos/furgonetas-medianas-y-grandes/">Furgos Medianas y Grandes</a></ol>
+                                <ol><a href="/category/vehiculos/carrozado/">Furgos Carrozados</a></ol>
+                                <ol><a href="/category/vehiculos/isotermo/">Furgos Isotermos+Frio</a></ol>
+                                <ol><a href="/category/vehiculos/suv-y-4x4/">SUV y 4x4</a></ol>
+                                <ol><a href="/category/vehiculos/turismo/">Turismos</a></ol>
                             </ul>
                         </div>
                         <div class="col-md-3 col-xs-6">
                             <ul>
                                 <ol><strong>Servicios</strong></ol>
                                 <ol><a href="/financiacion.html">Financiación</a></ol>
-                                <ol><a href="#">Suscripción</a></ol>
-                                <ol><a href="#">Carrozado</a></ol>
                             </ul>
                         </div>
                         <div class="col-md-3 col-xs-6">

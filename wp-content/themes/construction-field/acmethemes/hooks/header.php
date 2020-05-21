@@ -220,10 +220,15 @@ if ( ! function_exists( 'construction_field_header' ) ) :
                 <div class="site-description-wrapper col-md-8">
                     <?php if ( 1== $construction_field_display_site_tagline  ):
                             $description = get_bloginfo( 'description', 'display' );
-                            if ( $description || is_customize_preview() ) : ?>
+                            if ( ($description || is_customize_preview()) && !is_category() && !is_search() && !is_single()  ) : ?>
                                 <p class="site-description"><?php echo esc_html( $description ); ?></p>
-                            <?php endif;
-                        endif;?>
+                    <?php else:?>
+                        <div  class="buscador-header">
+                            <input type="text" value="" name="searchHome" id="searchHome" placeholder="¿Qué modelo estas buscando?"/>
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <?php endif;?>
+                    <?php endif;?>
                 </div>
                 <div class="at-beside-navbar-header col-md-1 col-xs-2 ">
 	                <?php

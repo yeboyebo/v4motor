@@ -237,7 +237,7 @@ jQuery(document).ready(function($){
     accordion();
     schedule_tab();
     at_site_origin_grid();
-    
+
 
     //Control menu movil
     jQuery(".navbar-toggle").click(function(){
@@ -280,14 +280,12 @@ jQuery(document).ready(function($){
     });
 
     jQuery("#searchHome").change(function(){
-        jQuery("#ver").val("all");
-        jQuery("#filterBy").val(jQuery(this).val());
-		autoscout.getHomeProduct();
-		jQuery(".home-results").fadeIn('slow');
-		jQuery('html,body').animate({
-			scrollTop: jQuery(".home-results").offset().top
-		}, 'slow');
+       window.location = '/?s=' +  jQuery("#searchHome").val();
     });
+
+    jQuery(".buscador-header i").click(function(){
+        window.location = '/?s=' +  jQuery("#searchHome").val();
+     });
 
 });
 

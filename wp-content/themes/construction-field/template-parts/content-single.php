@@ -14,13 +14,12 @@ $fields = get_fields();
 <article id="post-<?php the_ID(); ?>" <?php post_class('init-animate'); ?>>
     <div class="content-wrapper">
         <div class="entry-content <?php echo $no_blog_image?>">
-
+			<?php if(isset($fields['Precio']) && $fields['Precio'] > 0):?>
 				<!--Carousel Wrapper-->
 				<div id="carousel-post" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
 				<!--Slides-->
-				<div class="carousel-inner" role="listbox">'
+				<div class="carousel-inner" role="listbox">
 				<?php
-				$posts = get_posts(array('post_type' => 'attachment'));
 				$images = get_attached_media('image');
 				$i = 0;
 				$active = "active";
@@ -117,7 +116,7 @@ $fields = get_fields();
 				</div>
 				<div class="col-md-4 col-xs-12 financiacion">
 					<h3>Finanaciación a tu medida</h3>
-					<input type="range" class="range-slider"  name="price" value="<?= number_format($fields['Precio'], 2, ',', '.') ?>" max="50000" onchange="updateRangeInput(this.value);" />
+					<input type="range" class="range-slider"  name="price" value="<?=$fields['Precio'] ?>" max="50000" onchange="updateRangeInput(this.value);" />
 					<label>Importe</label><strong class="importe"><?= number_format($fields['Precio'], 2, ',', '.') ?>€</strong>
 					<input type="range" class="range-slider"  name="months" value="36" max="60" onchange="updateRangeTimeInput(this.value);" />
 					<label>Tiempo</label><strong class="time">36 Meses</strong>
@@ -133,12 +132,24 @@ $fields = get_fields();
 					</div>
 				</div>
 		</div>
+<?php else:?>
+	<div class="row">
+		<div class="post-title col-md-12 inner-main-title">
+				<?php
+				the_title( '<h1 class="entry-title">', '</h1>' );
+				?>
+		</div>
+		<div class="post-content col-md-12">
+			<?php the_content();?>
+		</div>
+	</div>
+<?php endif;?>
 			<?php
 
-			wp_link_pages( array(
+		/*	wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'construction-field' ),
 				'after'  => '</div>',
-			) );
+			) );*/
 			?>
         </div><!-- .entry-content -->
     </div>
@@ -148,25 +159,25 @@ $fields = get_fields();
 	function updateRangeInput(val) {
       jQuery('.financiacion .importe').text(parseFloat(val).toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
       var precio = jQuery('.financiacion .importe').text().replace('.','').replace(',','.');
-      var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text())); 
+      var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text()));
       jQuery('.financiacion .value').text(cuota.toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
     }
     function updateRangeTimeInput(val) {
-      jQuery('.financiacion .time').text(val+' Meses'); 
+      jQuery('.financiacion .time').text(val+' Meses');
       var precio = jQuery('.financiacion .importe').text().replace('.','').replace(',','.');
-      var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text())); 
+      var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text()));
       jQuery('.financiacion .value').text(cuota.toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
     }
 
     jQuery(document).ready(function(){
     	var precio = jQuery('.financiacion .importe').text().replace('.','').replace(',','.');
-      	var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text())); 
+      	var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text()));
       	jQuery('.financiacion .value').text(cuota.toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
     })
 
 
     function calculaFinanciacion(precio, meses){
-  
+
     	var interes = parseFloat((8.99/100)/12);
     	//var entrada = parseInt(jQuery("#entrada").val());
 		var entrada = 0;
@@ -174,7 +185,7 @@ $fields = get_fields();
 			entrada = 0;
 		 }
 
-		
+
 	 	precio += (precio * 0.03);
 
     	var cuota;

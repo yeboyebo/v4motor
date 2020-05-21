@@ -10,10 +10,13 @@
 get_header();
 global $construction_field_customizer_all_values;
 ?>
+<?php echo do_shortcode('[do_widget id=nav_menu-2]'); ?>
 <div class="wrapper inner-main-title">
 	<?php
 	echo construction_field_get_header_normal_image();
 	?>
+
+			<?php //echo do_shortcode('[do_widget id=nav_menu-3]'); ?>
 	<div class="container">
 		<header class="entry-header init-animate">
 			<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'construction-field' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
@@ -25,7 +28,7 @@ global $construction_field_customizer_all_values;
 		</header><!-- .entry-header -->
 	</div>
 </div>
-<div id="content" class="site-content container clearfix">
+<div id="content" class="site-content container clearfix category">
 	<?php
 	$sidebar_layout = construction_field_sidebar_selection();
 	if( 'both-sidebar' == $sidebar_layout ) {
@@ -38,7 +41,9 @@ global $construction_field_customizer_all_values;
 		if ( have_posts() ) :
 
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) :
+				echo '<div class="col-md-4 col-xs-12">';
+				the_post();
 
 				/**
 				 * Run the loop for the search to output the results.
@@ -46,7 +51,7 @@ global $construction_field_customizer_all_values;
 				 * called content-search.php and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
-
+				echo '</div>';
 			endwhile;
 
 			/**

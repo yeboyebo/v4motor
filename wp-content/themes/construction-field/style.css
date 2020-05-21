@@ -3539,6 +3539,31 @@ h1, h2, h3{
 	border: 1px solid #333;
 	width:100%;
 }
+.buscador-header{
+	margin-left: auto;
+	margin-right: auto;
+	width: inherit;
+	display: block;
+}
+.buscador-header input{
+	border-radius: 0;
+	border: 1px solid #333;
+	width:100%;
+	max-width: 500px;
+    display: block;
+	margin-top: 30px;
+	float: left;
+}
+.buscador-header i{
+	display: inline-block;
+    top: 35px;
+    position: relative;
+    width: 24px;
+    height: 40px;
+    font-size: 24px;
+    z-index: 100;
+    left: -30px;
+}
 .buscador::after{
 	content: "";
     font-family: "Font Awesome 5 Free";
@@ -3554,6 +3579,7 @@ h1, h2, h3{
     position: absolute;
     color: #333;
 }
+
 .row-categorias{
 	background: #316199;
 }
@@ -3765,6 +3791,9 @@ input:focus{
     z-index: 1;
     height: 25px;
 }
+.category .post-title .entry-title a{
+	color:#333;
+}
 .entry-content .info a{
 	color:#316199;
 	float: right;
@@ -3950,6 +3979,15 @@ input:focus{
   .carousel-control.left, .carousel-control.right{
   	background-image: none;
   }
+  .carousel-inner > .item > img, .carousel-inner > .item > a > img{
+    margin:auto;
+}
+.carousel-inner .item,
+.carousel-inner .item.active,
+.carousel-inner .item img {
+    margin: auto;
+    padding: 0px;
+}
 @media only screen and (max-width: 670px) {
 	body{
 		margin-top: -15px;

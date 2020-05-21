@@ -32,10 +32,16 @@ $no_blog_image = '';
         else:
 	        $no_blog_image = 'no-image';
 		endif;?>
-		<?php $fields = get_fields();//print_r($fields);?>
-		<div class="entry-header-title t">
+		<?php $fields = get_fields();//print_r($fields);
+			$classTitle = "post-title";
+			if(isset($fields['Precio']) && $fields['Precio'] > 0){
+				$classTitle = "entry-header-title";
+			}
+		?>
+		<div class="<?= $classTitle ?>  t">
 				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		</div>
+		<?php if(isset($fields['Precio']) && $fields['Precio'] > 0):?>
 		<div class="row block-precio">
 			<div class="col-md-8 precio">
 				<span>
@@ -54,6 +60,7 @@ $no_blog_image = '';
 			<div class="col-md-4 col-xs-4"><strong><?=  number_format($fields['km'], 2, ',', '.'); ?></strong></div>
 			<div class="col-md-4 col-xs-5"><strong><?=  $fields['Combustible']; ?></strong></div>
 		</div>
+	<?php endif;?>
 		<?php
             if ( 'content' == $content_from ) :
 	            the_content( sprintf(
@@ -61,10 +68,10 @@ $no_blog_image = '';
 		           // wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'construction-field' ), array( 'span' => array( 'class' => array() ) ) ),
 		          //  the_title( '<span class="screen-reader-text">"', '"</span>', false )
 	            ) );
-	            wp_link_pages( array(
+	          /*wp_link_pages( array(
 		            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'construction-field' ),
 		            'after'  => '</div>',
-	            ) );
+	            ) );*/
             else :
                // the_excerpt();
             endif;
