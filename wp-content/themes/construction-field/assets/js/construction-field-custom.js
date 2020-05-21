@@ -237,38 +237,7 @@ jQuery(document).ready(function($){
     accordion();
     schedule_tab();
     at_site_origin_grid();
-
-    jQuery("#financia").change(function(){
-    	var precio = parseInt(jQuery("#precio").val());
-    	var interes = parseFloat((8.99/100)/12);
-    	var meses =  parseInt(jQuery("#meses_a_financiar").val());
-    	var entrada = parseInt(jQuery("#entrada").val());
-    	if(isNaN(entrada)){
-			entrada = 0;
-		 }
-
-		 if(jQuery("#quierecomision").prop("checked")){
-		 	jQuery("#totalcontado").text(entrada);
-		 	precio += (precio * 0.03);
-		 }else{
-		 	jQuery("#totalcontado").text(entrada+(precio*0.03));
-		 }
-    	var cuota;
-    	console.log(precio +" "+ meses +" "+entrada+" "+" "+interes);
-    	//var Finance = import('finance.js');
-
-  		var finance = new Finance();
-  		cuota = finance.AM(precio, 8.99, meses/12, 0);
-    	//cuota = (precio*interes*(Math.pow((1+interes),(meses))))/((Math.pow((1+interes),(meses)))-1);
-    	completo=+parseFloat(cuota*meses);
-
-    	jQuery("#ncuotas").text(meses);
-    	jQuery("#precio_cuota").text(cuota.toFixed(2));
-    	jQuery("#precio_credito").text(completo.toFixed(2));
-
-
-    });
-    jQuery("#financia").ready(function(){jQuery("#financia").change();})
+    
 
     //Control menu movil
     jQuery(".navbar-toggle").click(function(){

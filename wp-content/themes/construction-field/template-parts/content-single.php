@@ -109,7 +109,7 @@ $fields = get_fields();
 								</ul>
 							</div>
 						</div>
-						<div class="col-md-12 col-xs-12">
+						<div class="col-md-12 col-xs-12 descripcion">
 							<h3>Comentario</h3>
 							<?php the_content();?>
 						</div>
@@ -117,19 +117,19 @@ $fields = get_fields();
 				</div>
 				<div class="col-md-4 col-xs-12 financiacion">
 					<h3>Finanaciación a tu medida</h3>
-					<input type="range" class="range-slider"  name="price" value="<?= number_format($fields['Precio'], 2, ',', '.') ?>" max-value="50000" />
-					<label>Importe</label><strong class="value"><?= number_format($fields['Precio'], 2, ',', '.') ?>€</strong>
-					<input type="range" class="range-slider"  name="months" value="12" max-value="24" />
-					<label>Tiempo</label><strong class="value">12 Meses</strong>
+					<input type="range" class="range-slider"  name="price" value="<?= number_format($fields['Precio'], 2, ',', '.') ?>" max="50000" onchange="updateRangeInput(this.value);" />
+					<label>Importe</label><strong class="importe"><?= number_format($fields['Precio'], 2, ',', '.') ?>€</strong>
+					<input type="range" class="range-slider"  name="months" value="36" max="60" onchange="updateRangeTimeInput(this.value);" />
+					<label>Tiempo</label><strong class="time">36 Meses</strong>
 					<div class="row">
-						<p class="cuota"><span>Cuota:</span><span class="value">75€/mes</span>
+						<p class="cuota"><span>Cuota: </span><span class="value">75€/mes</span>
 						<p>Toda la información sobre las condiciones de fi nanciación disponible aquí</p>
 					</div>
 					<div class="row interesado">
 					<h3>¡Me interesa!</h3>
-						<a href="/la-empresa/contacto.html" class="col-md-4 col-xs-4"><i class="fas fa-envelope-open-text"></i>Escríbenos</a>
+						<a href="https://volumen4motor.com/?page_id=27" class="col-md-4 col-xs-4"><i class="fas fa-envelope-open-text"></i>Escríbenos</a>
 						<a href="tel:948214094" class="col-md-4 col-xs-4"><i class="fas fa-phone-volume"></i>Llámanos</a>
-						<a href="/la-empresa/contacto.html" class="col-md-4 col-xs-4"><i class="fas fa-user-clock"></i>Te llamamos</a>
+						<a href="https://volumen4motor.com/?page_id=27" class="col-md-4 col-xs-4"><i class="fas fa-user-clock"></i>Te llamamos</a>
 					</div>
 				</div>
 		</div>
@@ -143,3 +143,49 @@ $fields = get_fields();
         </div><!-- .entry-content -->
     </div>
 </article><!-- #post-## -->
+
+<script>
+	function updateRangeInput(val) {
+      jQuery('.financiacion .importe').text(parseFloat(val).toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
+      var precio = jQuery('.financiacion .importe').text().replace('.','').replace(',','.');
+      var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text())); 
+      jQuery('.financiacion .value').text(cuota.toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
+    }
+    function updateRangeTimeInput(val) {
+      jQuery('.financiacion .time').text(val+' Meses'); 
+      var precio = jQuery('.financiacion .importe').text().replace('.','').replace(',','.');
+      var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text())); 
+      jQuery('.financiacion .value').text(cuota.toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
+    }
+
+    jQuery(document).ready(function(){
+    	var precio = jQuery('.financiacion .importe').text().replace('.','').replace(',','.');
+      	var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text())); 
+      	jQuery('.financiacion .value').text(cuota.toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
+    })
+
+
+    function calculaFinanciacion(precio, meses){
+  
+    	var interes = parseFloat((8.99/100)/12);
+    	//var entrada = parseInt(jQuery("#entrada").val());
+		var entrada = 0;
+    	if(isNaN(entrada)){
+			entrada = 0;
+		 }
+
+		
+	 	precio += (precio * 0.03);
+
+    	var cuota;
+    	console.log(precio +" "+ meses +" "+entrada+" "+" "+interes);
+    	//var Finance = import('finance.js');
+
+  		var finance = new Finance();
+  		cuota = finance.AM(precio, 8.99, meses/12, 0);
+    	//cuota = (precio*interes*(Math.pow((1+interes),(meses))))/((Math.pow((1+interes),(meses)))-1);
+    	console.log(cuota);
+    	completo=+parseFloat(cuota*meses);
+		return cuota;
+    }
+</script>
