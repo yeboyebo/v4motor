@@ -13,7 +13,7 @@ global $construction_field_customizer_all_values;
 <div class="page-menu">
 <?php echo do_shortcode('[do_widget id=nav_menu-2]'); ?>
 <?php echo do_shortcode('[do_widget id=nav_menu-3]'); ?>
-<?php echo do_shortcode( '[searchandfilter id="1229"]' ); ?>
+<?php echo do_shortcode( '[searchandfilter slug="categorias"]' ); ?>
 </div>
 <!--div class="wrapper inner-main-title">
 	<?php

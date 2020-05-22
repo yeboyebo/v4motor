@@ -15,7 +15,7 @@ global $construction_field_customizer_all_values;
 			<?php //construction_field_breadcrumbs();?>
 			<?php echo do_shortcode('[do_widget id=nav_menu-2]'); ?>
 			<?php echo do_shortcode('[do_widget id=nav_menu-3]'); ?>
-			<?php echo do_shortcode( '[searchandfilter id="1229"]' ); ?>
+			<?php echo do_shortcode( '[searchandfilter slug="categorias"]' ); ?>
 		</div>
 	</div>
 <div id="content" class="site-content container clearfix">
