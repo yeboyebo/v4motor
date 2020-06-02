@@ -2223,7 +2223,7 @@ Service Widget
 	margin-top: 30px;
 }
 .category .site-content{
-	margin-top: 100px;
+	margin-top: 50px;
 }
 #primary {
 	float: left;
@@ -2470,6 +2470,8 @@ article.page .entry-header-title{
 	display: inline-block;
 	margin-right: 10px;
 	margin-top: 0;
+	padding-left: 10px;
+    padding-right: 10px;
 }
 article.post .post-thumb,
 article.page .post-thumb{
@@ -3787,7 +3789,6 @@ input:focus{
 	font-size: 12px;
     font-weight: bold;
     color: #fff;
-    padding-left: 15px;
     line-height: 12px;
 }
 .category .entry-header-title{
@@ -3795,7 +3796,7 @@ input:focus{
     top: 0px;
     background: #000;
     z-index: 1;
-    height: 25px;
+    height: 40px;
 }
 .category .post-title .entry-title a{
 	color:#333;

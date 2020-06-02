@@ -61,7 +61,7 @@ $fields = get_fields();
 					<div class="col-md-2 col-xs-4"><span>Tipo de cambio</span></div>
 					<div class="col-md-2 hidden-mobile"><span>Plazas</span></div>
 					<div class="col-md-2 col-xs-2"><strong><?=  $fields['Año']; ?></strong></div>
-					<div class="col-md-2 col-xs-3"><strong><?=  number_format($fields['km'], 2, ',', '.'); ?></strong></div>
+					<div class="col-md-2 col-xs-3"><strong><?=  number_format($fields['km'], 0, ',', '.'); ?></strong></div>
 					<div class="col-md-2 col-xs-3"><strong><?=  $fields['Combustible']; ?></strong></div>
 					<div class="col-md-2 hidden-mobile"><strong><?=  $fields['categoria']; ?></strong></div>
 					<div class="col-md-2 col-xs-4"><strong><?=  $fields['transmision']; ?></strong></div>

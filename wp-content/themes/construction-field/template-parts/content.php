@@ -57,7 +57,7 @@ $no_blog_image = '';
 			<div class="col-md-4 col-xs-4"><span>Kilometraje</span></div>
 			<div class="col-md-4 col-xs-5"><span>Combustible</span></div>
 			<div class="col-md-4 col-xs-3"><strong><?=  $fields['Año']; ?></strong></div>
-			<div class="col-md-4 col-xs-4"><strong><?=  number_format($fields['km'], 2, ',', '.'); ?></strong></div>
+			<div class="col-md-4 col-xs-4"><strong><?=  number_format($fields['km'], 0, ',', '.'); ?></strong></div>
 			<div class="col-md-4 col-xs-5"><strong><?=  $fields['Combustible']; ?></strong></div>
 		</div>
 	<?php endif;?>
