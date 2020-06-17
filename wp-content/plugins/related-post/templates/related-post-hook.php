@@ -143,12 +143,12 @@ function related_post_loop_item_element_post_title($loop_post_id, $elementData){
 
     <?php if(isset($fields['Precio']) && $fields['Precio'] > 0):?>
 		<div class="row block-precio">
-			<div class="col-md-8 precio">
+			<div class="col-md-8 col-xs-8 precio">
 				<span>
 				<?=  number_format($fields['Precio'], 2, ',', '.'); ?>€
 				</span>
 			</div>
-			<div class="col-md-4 info">
+			<div class="col-md-4 col-xs-4 info">
 				<a href="<?=  get_permalink() ?>">+ info <i class="fas fa-caret-right"></i></a>
 			</div>
 		</div>

@@ -67,3 +67,10 @@ global $construction_field_customizer_all_values;
 	?>
 </div><!-- #content -->
 <?php get_footer();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+$categories = get_the_category();
+$_SESSION['lastCategory'] = $categories[0]->cat_ID;
+?>

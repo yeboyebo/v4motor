@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=yehuda@m
 Tags: wp smtp,smtp,mail,email,phpmailer,mailer,wp mail,gmail,yahoo,mail smtp,ssl,tls
 License: GPLv2
 Requires at least: 2.7
-Tested up to: 5.2
-Stable tag: 1.1.10
+Tested up to: 5.4
+Stable tag: 1.1.11
 
 WP SMTP can help us to send emails via SMTP instead of the PHP mail() function. 
 
@@ -16,7 +16,7 @@ It adds a settings page to "Dashboard"->"Settings"->"WP SMTP" where you can conf
 There are some examples on the settings page, you can click the corresponding icon to view (such as "Gmail""Yahoo!""Microsoft""163""QQ").
 If the field "From" was not a valid email address, or the field "SMTP Host" was left blank, it will not reconfigure the wp_mail() function.
 
-= Do you want more advanced SMTP mailer? =
+= Do you want more advanced SMTP mailer?
 
 * Built-in **importer for WP SMTP settings**.
 * Universal SMTP for every service.
@@ -26,7 +26,7 @@ If the field "From" was not a valid email address, or the field "SMTP Host" was 
 * Built-in alert function when emails are faling, you can get notified by Email, Slack or pushover.
 * Ports checker for any blocking issue.
 
-**Check Post SMTP:**
+Check Post SMTP:
 [https://wordpress.org/plugins/post-smtp/](https://wordpress.org/plugins/post-smtp/)
 
 = CREDITS =
@@ -50,6 +50,9 @@ WP SMTP plugin was originally created by BoLiQuan. It is now owned and maintaine
 5. For more information of this plugin, please visit: [Plugin Homepage](https://wpsmtpmail.com/ "WP SMTP").
 
 == Changelog ==
+
+= 1.1.11 =
+All good, still maintained, just update some info
 
 = 1.1.10 =
 

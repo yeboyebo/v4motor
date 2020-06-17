@@ -119,8 +119,10 @@ if ( ! function_exists( 'construction_field_footer' ) ) :
                             <ul>
                                 <ol><strong>Horario de exposición</strong></ol>
                                 <ol>Lunes a viernes:</ol>
+                                <ol>mañana de 9:00 h. a 13:30 h.</ol>
+                                <ol>tarde de 16:00 h. a 20:00 h.</ol>
+                                <ol>Sábados:</ol>
                                 <ol>mañana de 9:30 h. a 13:30 h.</ol>
-                                <ol>tarde de 15:00 h. a 19:30 h.</ol>
                             </ul>
                         </div>
                     </div>

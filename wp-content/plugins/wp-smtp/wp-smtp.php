@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /*
 Plugin Name: WP SMTP
 Description: WP SMTP can help us to send emails via SMTP instead of the PHP mail() function.
-Version: 1.1.10
+Version: 1.1.11
 Author: Yehuda Hassine
 Text Domain: wp-smtp
 Domain Path: /lang
