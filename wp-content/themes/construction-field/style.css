@@ -2292,7 +2292,7 @@ Service Widget
 		margin-top: 2em;
 	}
 	.category .site-content{
-		margin-top: 30px;
+		margin-top: 10px;
 	}
 	.inner-main-title{
 		margin-bottom: 30px;
@@ -2594,10 +2594,10 @@ article.page .post-thumb a{
 #construction-field-breadcrumbs .breadcrumb-trail li {
 	display: inline-block;
 	list-style: outside none none;
-	color: #333;
+	color: #fff;
 }
 #construction-field-breadcrumbs a{
-	color: #333;
+	color: #fff;
 }
 #construction-field-breadcrumbs a:hover{
 	text-decoration: underline;
@@ -3110,7 +3110,7 @@ html{
 }
 .page-menu .breadcrumbs{
 	position: relative;
-    top: 5px;
+    top: 10px;
     left: 20px;
 }
 .page-menu #menu-menu-principal{
@@ -3537,7 +3537,7 @@ h1, h2, h3{
 }
 .buscador {
 	position: absolute;
-    top: 17%;
+    top: 250px;
 	z-index: 1;
 	width:40%;
 	left: 30%;
@@ -3595,9 +3595,6 @@ h1, h2, h3{
 	background: #fff;
 	display: block;
 	margin-left:15px;
-}
-.site-description{
-	padding-right: 100px;
 }
 #execphp-2{
 	margin-left:15px;
@@ -3819,7 +3816,7 @@ input:focus{
 	height: 48px;
 	margin-left: 0;
 	margin-right: 0;
-	font-size: 12px;
+	font-size: 10px;
 }
 .entry-content .block-precio{
 	margin-left: 0;
@@ -3828,17 +3825,11 @@ input:focus{
 #menu-vehiculos li{
 	display:inline-block;
 	color:#444041;
-	margin-right: 20px;
+	margin-right: 60px;
 	border-bottom: none;
-	min-width: 100px;
-}
-#menu-vehiculos li a{
-    width: 100%;
-    text-align: center;
-    display: block;
 }
 #nav_menu-3{
-	margin-right: 120px;
+	margin-left: 60px;
 }
 .category #content{
 	width: 100%;
@@ -3852,7 +3843,7 @@ input:focus{
 .single-post .entry-header-title .entry-title{
 	color:#fff;
 	padding-left: 15px;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 24px;
 	padding-top: 10px;
 	font-weight: bold;
@@ -3901,10 +3892,9 @@ input:focus{
 .single-post .equipamiento .items ul li i{
 	margin-right: 15px;
 }
-.financiacion{
+.single-post .financiacion{
 	background: #eeeeee;
 }
-
   .range-slider {
 	-webkit-appearance: none;
 	width: 100%;
@@ -3962,14 +3952,11 @@ input:focus{
     text-align: center;
     border-radius: 50%;
     background: #fff;
-    padding-top: 12%;
+    padding-top: 15%;
     margin-left: auto;
 	margin-right: auto;
 	color:#333;
   }
-  .page-template-default .interesado i{
-	padding-top:5%;
-}
   .interesado a{
 	text-align: center;
 	color:#fff;
@@ -4022,97 +4009,85 @@ input:focus{
     color: #316199;
     font-size: 14px;
 }
-
-#menu-vehiculos .menu-item-1207 a::after{
+#menu-vehiculos .menu-item-1207 a:hover::after{
 	background: url('https://volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Furgonetas_peq.png') center no-repeat;
-	background-size: 100px;
+	background-size: 110px;
 	content:"";
-	width: 100%;
+	width: 100px;
 	height: 70px;
 	display: block;
 	background-color: #eeeeee;
 	z-index: 1000000;
-	opacity: 0;
 }
-#menu-vehiculos .menu-item-1206 a::after{
+#menu-vehiculos .menu-item-1206 a:hover::after{
 	background: url('https://volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Furgonetas.png') center no-repeat;
-	background-size: 100px;
+	background-size: 110px;
 	content:"";
-	width: 100%;
+	width: 100px;
 	height: 70px;
 	display: block;
 	background-color: #eeeeee;
 	z-index: 1000000;
-	opacity: 0;
 }
-#menu-vehiculos .menu-item-1204 a::after{
+#menu-vehiculos .menu-item-1204 a:hover::after{
 	background: url('https://volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Camper.png') center no-repeat;
-	background-size: 100px;
+	background-size: 110px;
 	content:"";
-	width: 100%;
+	width: 100px;
 	height: 70px;
 	display: block;
 	background-color: #eeeeee;
 	z-index: 1000000;
-	opacity: 0;
 }
-#menu-vehiculos .menu-item-1208 a::after{
+#menu-vehiculos .menu-item-1208 a:hover::after{
 	background: url('https://volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Isotermo.png') center no-repeat;
-	background-size: 100px;
+	background-size: 110px;
 	content:"";
-	width: 100%;
+	width: 100px;
 	height: 70px;
 	display: block;
 	background-color: #eeeeee;
 	z-index: 1000000;
-	opacity: 0;
 }
-#menu-vehiculos .menu-item-1205 a::after{
+#menu-vehiculos .menu-item-1205 a:hover::after{
 	background: url('https://volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Carrozado.png') center no-repeat;
-	background-size: 100px;
+	background-size: 110px;
 	content:"";
-	width: 100%;
+	width: 100px;
 	height: 70px;
 	display: block;
 	background-color: #eeeeee;
 	z-index: 1000000;
-	opacity: 0;
 }
-#menu-vehiculos .menu-item-1209 a::after{
+#menu-vehiculos .menu-item-1209 a:hover::after{
 	background: url('https://volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Monovolumen.png') center no-repeat;
-	background-size: 100px;
+	background-size: 110px;
 	content:"";
-	width: 100%;
+	width: 100px;
 	height: 70px;
 	display: block;
 	background-color: #eeeeee;
 	z-index: 1000000;
-	opacity: 0;
 }
-#menu-vehiculos .menu-item-1210 a::after{
+#menu-vehiculos .menu-item-1210 a:hover::after{
 	background: url('https://volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/suv.png') center no-repeat;
-	background-size: 100px;
+	background-size: 110px;
 	content:"";
-	width: 100%;
+	width: 120px;
 	height: 70px;
 	display: block;
 	background-color: #eeeeee;
 	z-index: 1000000;
-	opacity: 0;
 }
-#menu-vehiculos .menu-item-1211 a::after{
+#menu-vehiculos .menu-item-1211 a:hover::after{
 	background: url('https://volumen4motor.com/wp-content/themes/construction-field/images/vehiculos/Turismos.png') center no-repeat;
 	background-size: 100px;
 	content:"";
-	width: 100%;
+	width: 120px;
 	height: 70px;
 	display: block;
 	background-color: #eeeeee;
 	z-index: 1000000;
-	opacity: 0;
-}
-#menu-vehiculos .current-menu-item a::after, #menu-vehiculos .menu-item a:hover::after{
-	opacity: 1;
 }
 #menu-vehiculos li a{
 	height: max-content;
@@ -4123,16 +4098,15 @@ input:focus{
 .related-post .post-list .item .title-coche{
 	background: #000;
     z-index: 1;
-	height: 40px;
+	height: 30px;
 	color:#fff !important;
 	padding-left: 10px !important;
 	padding-right: 10px !important;
-	font-size: 12px !important;
-	text-transform: uppercase;
+	font-size: 14px !important;
+	text-transform: capitalize;
 	font-weight: bold;
 	margin-top: -10px !important;
-	line-height: 18px;
-    padding-top: 3px !important;
+    padding-top: 5px !important;
 }
 .related-post .headline{
 	text-align: center;
@@ -4140,43 +4114,18 @@ input:focus{
 }
 .related-post{
 	float: left;
-	margin-top: 0px !important;
-	width: 100% !important;
+	margin-top: 50px !important;
+	width: 150% !important;
 }
-.post-navigation{
-	display: none;
+.carousel-inner{
+	max-height: 400px;
+	cursor: zoom-in;
 }
-.single-post .container{
-	width: 100%;
-	padding-left: 30px;
-    padding-right: 30px;
-}
-.single-post .carousel-inner{
-	height: 65vh;
-	cursor:zoom-in;
-}
-.single-post .carousel .active{
-	 cursor:zoom-out;
-}
-.single-post #menu-vehiculos a:hover::after{
-	display: none;
-}
-.single-post .page-menu{
-	margin-bottom: 0;
-}
-.related-post .post-list .item .post_thumb{
+.carousel-inner-opened{
 	max-height: 100% !important;
-}
-#menu-vehiculos{
-	width: max-content;
-    margin-left: auto;
-    margin-right: auto;
+	cursor: zoom-out !important;
 }
 @media only screen and (max-width: 670px) {
-	.single-post .carousel-inner{
-		height: 100%;
-	}
-
 	body{
 		margin-top: -15px;
 	}
@@ -4222,7 +4171,6 @@ input:focus{
     	font-size: 16px;
     	font-family: 'Poppins', sans-serif;
     	font-size: 14px;
-    	padding-top: 5px;
     }
     #product_gallery, #gallery{
     	min-height: 240px !important;
@@ -4330,19 +4278,17 @@ input:focus{
 	}
 	#nav_menu-3{
 		margin-left: 20px;
-		margin-right: 0;
 	}
 	#menu-vehiculos li{
-		margin-right: 0px;
-		min-width: 90px;
+		margin-right: 15px;
 	}
 	.page-menu{
 		height: 120px;
 		margin-bottom: 15px;
 	}
 	.caracteristicas div, .entry-content .caracteristicas{
-		padding-left: 0px;
-		padding-right: 0px;
+		padding-left: 7px;
+		padding-right: 7px;
 	}
 	.caracteristicas span{
 		font-size: 11px;;
@@ -4371,13 +4317,11 @@ input:focus{
 	  	padding-right: 15px;
 	  }
 	  .page-menu .searchandfilter{
-	    width: 100%;
-	    display: block;
-	    position: relative;
-	    top: 120px;
-	    right: -120px;
-	    z-index: 0;
-	    float: left;
+		width: 100%;
+		display: block;
+		position: relative;
+		top: 80px;
+		right: -120px;
 
 	  }
 	  .buscador-header input{
@@ -4401,66 +4345,10 @@ input:focus{
 		  width: 100% !important;
 	  }
 	  .related-post .post-list .item{
-	  	margin-left: 20px !important;
+		  margin-left: 20px !important;
 	  }
-	  #menu-vehiculos{
-	  	width: 100%;
-	  }
-	  .site-description{
-		padding-right: 0;
-	}
-}
-#menu-vehiculos .current-menu-item a{
-	font-weight: bold;
-}
-
-/*Ipad*/
-@media only screen and (min-width: 671px) and (max-width: 1024px) {
-	#execphp-2{
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-	.content-categorias h3{
-		font-size: 16px;
-		margin-bottom: 5px;
-	}
-	.content-categorias .category-links li{
-		line-height: 16px;
-	}
-	.navbar-header .navbar-toggle{
-		display: none;
-	}
-	.navbar-header{
-		float: left;
-	}
-	.buscador-header i {
-	    display: inline-block;
-	    top: -30px;
-	    position: relative;
-	    width: 24px;
-	    height: 40px;
-	    font-size: 24px;
-	    z-index: 100;
-	    left: 90%;
-	}
-	#menu-vehiculos li{
-		margin-right: 0px;
-	}
-	.searchandfilter label, .searchandfilter select{
-		max-width: 140px !important;
-		min-width: 100px !important;
-	}
-	.caracteristicas .col-md-2, .caracteristicas .col-md-4{
-		padding-left: 7px;
-		padding-right: 7px;
-		max-height: 24px;
-		overflow:hidden;
-	}
-}
-
-@media only screen and (max-width: 320px) {
-	.buscador-header{
-	    padding-left: 30px;
+ 	.carousel-inner{
+		max-height: 100%;
+		cursor: pointer;
 	}
 }

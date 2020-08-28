@@ -56,7 +56,7 @@ if ( isset( $_POST['wp_smtp_test'] ) && isset( $_POST['wp_smtp_nonce_test'] ) ) 
             $status = __( 'Message sent!', 'wp-smtp' );
             $class = 'success';
         } else {
-            $status = $this->phpmailer_error->get_error_message();
+            $status = \WPSMTP\Admin::$phpmailer_error->get_error_message();
         }
     }
 
@@ -69,18 +69,6 @@ $ws_nonce = wp_create_nonce('my_ws_nonce');
 
     <h1>
         WP SMTP
-        <span style="margin-left:10px; vertical-align:middle;">
-        <a href="<?php echo plugins_url('screenshot-1.png', __FILE__); ?>" target="_blank"><img
-                src="<?php echo plugins_url('/img/gmail.png', __FILE__); ?>" alt="Gmail" title="Gmail"/></a>
-        <a href="<?php echo plugins_url('screenshot-2.png', __FILE__); ?>" target="_blank"><img
-                src="<?php echo plugins_url('/img/yahoo.png', __FILE__); ?>" alt="Yahoo!" title="Yahoo!"/></a>
-        <a href="<?php echo plugins_url('screenshot-3.png', __FILE__); ?>" target="_blank"><img
-                src="<?php echo plugins_url('/img/microsoft.png', __FILE__); ?>" alt="Microsoft" title="Microsoft"/></a>
-        <a href="<?php echo plugins_url('screenshot-4.png', __FILE__); ?>" target="_blank"><img
-                src="<?php echo plugins_url('/img/163.png', __FILE__); ?>" alt="163" title="163"/></a>
-        <a href="<?php echo plugins_url('screenshot-5.png', __FILE__); ?>" target="_blank"><img
-                src="<?php echo plugins_url('/img/qq.png', __FILE__); ?>" alt="QQ" title="QQ"/></a>
-        </span>
     </h1>
 
     <form action="" method="post" enctype="multipart/form-data" name="wp_smtp_form">

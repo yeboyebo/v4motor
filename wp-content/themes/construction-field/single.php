@@ -16,14 +16,13 @@ if( get_header_image() ){
 	$bg_image_url = esc_url( get_header_image() );
 }
 ?>
-<div class="row">
-	<div class="page-menu">
-		<?php //construction_field_breadcrumbs();?>
-		<?php echo do_shortcode('[do_widget id=nav_menu-2]'); ?>
-		<?php echo do_shortcode('[do_widget id=nav_menu-3]'); ?>
-		<?php //echo do_shortcode( '[searchandfilter slug="categorias"]' ); ?>
-	</div>
-</div>
+<?php echo do_shortcode('[do_widget id=nav_menu-2]'); ?>
+<!--div class="row">
+		<div class="page-menu">
+			<?php //construction_field_breadcrumbs();?>
+
+		</div>
+	</div-->
 <!--div class="wrapper inner-main-title">
     <?php
    // echo construction_field_get_header_normal_image();

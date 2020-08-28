@@ -3,8 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /*
 Plugin Name: WP SMTP
-Description: WP SMTP can help us to send emails via SMTP instead of the PHP mail() function.
-Version: 1.1.11
+Description: WP SMTP can help us to send emails via SMTP instead of the PHP mail() function and email logger built-in.
+Version: 1.2.1
 Author: Yehuda Hassine
 Text Domain: wp-smtp
 Domain Path: /lang
@@ -16,9 +16,18 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * The plugin was originally created by BoLiQuan
  */
 
+define( 'WPSMTP__FILE__', __FILE__ );
+define( 'WPSMTP_PLUGIN_BASE', plugin_basename( WPSMTP__FILE__ ) );
+define( 'WPSMTP_PATH', plugin_dir_path( WPSMTP__FILE__ ) );
+define( 'WPSMTP_URL', plugins_url( '/', WPSMTP__FILE__ ) );
+define( 'WPSMTP_ASSETS_PATH', WPSMTP_PATH . 'assets/' );
+define( 'WPSMTP_ASSETS_URL', WPSMTP_URL . 'assets/' );
+
+require_once 'vendor/autoload.php';
+
 class WP_SMTP {
 
-	private $wsOptions, $phpmailer_error;
+	private $wsOptions;
 
 	public function __construct() {
 		$this->setup_vars();
@@ -36,8 +45,9 @@ class WP_SMTP {
 		add_filter( 'plugin_action_links', array( $this, 'wp_smtp_settings_link' ), 10, 2 );
 		add_action( 'init', array( $this,'load_textdomain' ) );
 		add_action( 'phpmailer_init', array( $this,'wp_smtp' ) );
-		add_action( 'wp_mail_failed', array( $this, 'catch_phpmailer_error' ) );
-		add_action( 'admin_menu', array( $this, 'wp_smtp_admin' ) );
+
+		new WPSMTP\Admin();
+		new WPSMTP\Process();
 	}
 
 	function wp_smtp_activate(){
@@ -53,6 +63,9 @@ class WP_SMTP {
 		$wsOptions["deactivate"] = "";
 
 		add_option( 'wp_smtp_options', $wsOptions );
+
+		\WPSMTP\Table::install();
+
 	}
 
 	function wp_smtp_deactivate() {
@@ -74,8 +87,8 @@ class WP_SMTP {
 		$phpmailer->Mailer = "smtp";
 		$phpmailer->From = $this->wsOptions["from"];
 		$phpmailer->FromName = $this->wsOptions["fromname"];
-		$phpmailer->Sender = $phpmailer->From; //Return-Path
-		$phpmailer->AddReplyTo($phpmailer->From,$phpmailer->FromName); //Reply-To
+		$phpmailer->Sender = $phpmailer->From;
+		$phpmailer->AddReplyTo($phpmailer->From,$phpmailer->FromName);
 		$phpmailer->Host = $this->wsOptions["host"];
 		$phpmailer->SMTPSecure = $this->wsOptions["smtpsecure"];
 		$phpmailer->Port = $this->wsOptions["port"];
@@ -87,26 +100,19 @@ class WP_SMTP {
 		}
 	}
 
-	function catch_phpmailer_error( $error ) {
-		$this->phpmailer_error = $error;
-	}
-
 	function wp_smtp_settings_link($action_links,$plugin_file) {
 		if( $plugin_file == plugin_basename( __FILE__ ) ) {
-			$ws_settings_link = '<a href="options-general.php?page=' . dirname( plugin_basename(__FILE__) ) . '/wp-smtp.php">' . __("Settings") . '</a>';
+
+			$ws_settings_link = '<a href="admin.php?page=wpsmtp_logs">' . __("Logs") . '</a>';
+			array_unshift($action_links,$ws_settings_link);
+
+			$ws_settings_link = '<a href="admin.php?page=' . dirname( plugin_basename(__FILE__) ) . '/wp-smtp.php">' . __("Settings") . '</a>';
 			array_unshift($action_links,$ws_settings_link);
 		}
 
 		return $action_links;
 	}
 
-	function wp_smtp_admin(){
-		add_options_page('WP SMTP Options', 'WP SMTP','manage_options', __FILE__, array( $this, 'wp_smtp_page') );
-	}
-
-	function wp_smtp_page(){
-		require_once __DIR__ . '/wp_smtp_admin.php';
-	}
 }
 
 new WP_SMTP();

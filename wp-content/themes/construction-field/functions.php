@@ -88,8 +88,8 @@ function right_admin_footer_text_output($text) {
 }
 
 if (!current_user_can('edit_users')) {
-    add_action('init', create_function('$a', "remove_action('init', 'wp_version_check');"), 2);
-    add_filter('pre_option_update_core', create_function('$a', "return null;"));
+    add_action('init', function(){ return remove_action('init', 'wp_version_check');}, 2);
+    add_filter('pre_option_update_core', function(){return null;});
 }
 function register_others_script() {
  //    wp_register_script('shadowbox',TEMPLATEURI.'/js/shadowbox-3.0.3/shadowbox.js', array('jquery'));
@@ -119,74 +119,63 @@ remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 function calculator(){
-$html = '
-  <div class="row">
-   <div class="col-md-2 col-xs-12"></div>
-  <div class="col-md-8 col-xs-12 financiacion">
-          <h3>Finanaciación a tu medida</h3>
-          <input type="range" class="range-slider"  name="price" value="12000" max="50000" onchange="updateRangeInput(this.value);" />
-          <label>Importe</label><strong class="importe">'.number_format(12000, 2, ',', '.').'€</strong>
-          <input type="range" class="range-slider"  name="months" value="36" max="60" onchange="updateRangeTimeInput(this.value);" />
-          <label>Tiempo</label><strong class="time">36 Meses</strong>
-          <div class="row">
-            <p class="cuota"><span>Cuota: </span><span class="value">75€/mes</span>
-            <p>Toda la información sobre las condiciones de financiación disponible aquí</p>
-          </div>
-          <div class="row interesado">
-          <h3>¡Me interesa!</h3>
-            <a href="https://volumen4motor.com/?page_id=27" class="col-md-4 col-xs-4"><i class="fas fa-envelope-open-text"></i>Escríbenos</a>
-            <a href="tel:948214094" class="col-md-4 col-xs-4"><i class="fas fa-phone-volume"></i>Llámanos</a>
-            <a href="https://volumen4motor.com/?page_id=27" class="col-md-4 col-xs-4"><i class="fas fa-user-clock"></i>Te llamamos</a>
-          </div>
-        </div>
-    <div class="col-md-2 col-xs-12"></div>
-  </div>
-';	
+	if(isset($_GET['price'])){
+		$price = (int)$_GET['price'];
+	}else{
+		$price = "10000";
+	}
+?>
+<form action="" method="post" id="financia">
+      
+    <ul>
+      <li>
+        <label>Cantidad a financiar:</label>
+        <input type="text" id="precio" name="precio" value="<?php echo $price;?>">
+      </li>
+      <li>
+        <i>T.I.N.:</i>
+        <span id="tin" name="tin">8,99</span> %
+      </li>
 
-$html .= "<script>
-  function updateRangeInput(val) {
-      jQuery('.financiacion .importe').text(parseFloat(val).toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
-      var precio = jQuery('.financiacion .importe').text().replace('.','').replace(',','.');
-      var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text()));
-      jQuery('.financiacion .value').text(cuota.toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
-    }
-    function updateRangeTimeInput(val) {
-      jQuery('.financiacion .time').text(val+' Meses');
-      var precio = jQuery('.financiacion .importe').text().replace('.','').replace(',','.');
-      var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text()));
-      jQuery('.financiacion .value').text(cuota.toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
-    }
-
-    jQuery(document).ready(function(){
-      var precio = jQuery('.financiacion .importe').text().replace('.','').replace(',','.');
-        var cuota = calculaFinanciacion(parseFloat(precio), parseInt(jQuery('.financiacion .time').text()));
-        jQuery('.financiacion .value').text(cuota.toLocaleString('es-ES',  {style: 'currency', currency: 'EUR'}));
-    })
-
-
-    function calculaFinanciacion(precio, meses){
-
-      var interes = parseFloat((7.99/100)/12);
-    var entrada = 0;
-      if(isNaN(entrada)){
-      entrada = 0;
-     }
-
-
-    precio += (precio * 0.03);
-
-      var cuota;
-      //var Finance = import('finance.js');
-
-      var finance = new Finance();
-      cuota = finance.AM(precio, 7.99, meses/12, 0);
-      //cuota = (precio*interes*(Math.pow((1+interes),(meses))))/((Math.pow((1+interes),(meses)))-1);
-      //console.log(cuota);
-      completo=+parseFloat(cuota*meses);
-    return cuota;
-    }
-</script>";
-return $html;
+      <li>
+        <label>Aplazamiento (meses):</label>
+        <select id="meses_a_financiar" name="meses"><option value="36">36</option><option value="48">48</option><option value="60">60</option><option value="72">72</option><option value="84">84</option><option value="96">96</option><option value="108">108</option><option value="120">120</option></select>
+      </li>
+      <li>
+        <label>Entrada:</label>
+        <input type="text" id="entrada" name="entrada">
+      </li>
+      <li>
+        <label>Financiar comisión apertura:</label>
+        <span>
+          <label><input type="radio" id="quierecomision" name="quierecomision" value="si"> Si</label>
+          <label><input checked="checked" type="radio" id="noquierecomision" name="quierecomision" value="no"> No</label>
+        </span>
+      </li>
+      <li>
+        <i>Total contado:</i>
+        <span id="totalcontado" name="totalcontado">300,00</span> €
+      </li>
+    </ul>
+    <ul>
+      <li><strong><span id="ncuotas" name="ncuotas">120</span> cuotas de:</strong> <b><span id="precio_cuota" name="precio_cuota">144</span> €</b></li>
+    </ul>
+    <p>
+      <span>
+        <i>Comisión Apertura:</i>
+        <b><span id="interesComisionApertura" name="interesComisionApertura">3,00</span> %</b>
+      </span>
+      <span><b>Crédito:</b> <span id="precio_credito" name="precio_credito">11.342,10</span> €</span>
+      <span><b>T.A.E.:</b><span id="tae" name="tae">10,06</span> %</span>
+    </p>
+    <p><a href="javascript:void(0);" id="submitLink" title="VER OFERTA DISPONIBLE">VER VEHÍCULOS DISPONIBLES PARA ESTA CUOTA DE FINANCIACIÓN</a></p>
+  </form>
+  <script type="text/javascript">
+  	jQuery("#submitLink").click(function(){
+  		window.location.href = "/catalogo-de-vehiculos.html?price="+jQuery("#precio_credito").text();
+  	});
+  </script>
+<?php	
 }
 add_shortcode( 'calculadora_financiacion', 'calculator' );
 

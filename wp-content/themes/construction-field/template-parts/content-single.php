@@ -70,9 +70,9 @@ $fields = get_fields();
 				<div class="col-md-4 col-xs-12 precio">
 					<span class="price-label">Precio</span>
 					<span class="price-quantity"><strong><?=  number_format($fields['Precio'], 2, ',', '.'); ?>€</strong>
-						<?php if(isset($fields['precio_sin_iva']) && $fields['precio_sin_iva'] > 0):?>
-						<span class="sin-iva"><?=  number_format( $fields['precio_sin_iva'], 2, ',', '.'); ?>€ + IVA</span>
-					<?php endif;?>
+						<?php if($fields['precio_sin_iva'] && $fields['precio_sin_iva'] > 0):?>
+							<span class="sin-iva"><?=  number_format( $fields['precio_sin_iva'], 2, ',', '.'); ?>€ + IVA</span>
+						<?php endif;?>
 					</span>
 				</div>
 			</div>
@@ -126,7 +126,7 @@ $fields = get_fields();
 					<label>Tiempo</label><strong class="time">36 Meses</strong>
 					<div class="row">
 						<p class="cuota"><span>Cuota: </span><span class="value">75€/mes</span>
-						<p>Toda la información sobre las condiciones de financiación disponible aquí</p>
+						<p>Toda la información sobre las condiciones de fi nanciación disponible aquí</p>
 					</div>
 					<div class="row interesado">
 					<h3>¡Me interesa!</h3>
@@ -135,9 +135,6 @@ $fields = get_fields();
 						<a href="https://volumen4motor.com/?page_id=27" class="col-md-4 col-xs-4"><i class="fas fa-user-clock"></i>Te llamamos</a>
 					</div>
 				</div>
-		</div>
-		<div class="row">
-			<?php echo do_shortcode('[related_post post_id="'.get_the_ID().'"]'); ?>
 		</div>
 <?php else:?>
 	<div class="row">
@@ -185,7 +182,7 @@ $fields = get_fields();
 
     function calculaFinanciacion(precio, meses){
 
-    	var interes = parseFloat((7.99/100)/12);
+    	var interes = parseFloat((8.99/100)/12);
     	//var entrada = parseInt(jQuery("#entrada").val());
 		var entrada = 0;
     	if(isNaN(entrada)){
@@ -196,13 +193,13 @@ $fields = get_fields();
 	 	precio += (precio * 0.03);
 
     	var cuota;
-    	//console.log(precio +" "+ meses +" "+entrada+" "+" "+interes);
+    	console.log(precio +" "+ meses +" "+entrada+" "+" "+interes);
     	//var Finance = import('finance.js');
 
   		var finance = new Finance();
-  		cuota = finance.AM(precio, 7.99, meses/12, 0);
+  		cuota = finance.AM(precio, 8.99, meses/12, 0);
     	//cuota = (precio*interes*(Math.pow((1+interes),(meses))))/((Math.pow((1+interes),(meses)))-1);
-    	//console.log(cuota);
+    	console.log(cuota);
     	completo=+parseFloat(cuota*meses);
 		return cuota;
     }

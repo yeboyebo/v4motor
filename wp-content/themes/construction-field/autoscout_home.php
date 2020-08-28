@@ -9,22 +9,19 @@
 					<a href="<?= get_category_link(13) ?>">Camper</a>
 				</li>
 				<li>
-					<a href="<?= get_category_link(11) ?>">Furg. pequeñas</a>
+					<a href="<?= get_category_link(11) ?>">Pequeñas</a>
 				</li>
 				<li>
-					<a href="<?= get_category_link(12) ?>">Furg. grandes</a>
+					<a href="<?= get_category_link(12) ?>">Grandes</a>
 				</li>
-
 				<li>
 					<a href="<?= get_category_link(16) ?>">Carrozado</a>
 				</li>
-				
 				<li>
 					<a href="<?= get_category_link(14) ?>">Isotermo</a>
 				</li>
-				
 				<li>
-					<a href="<?= get_category_link(17) ?>">Monovolumen / SUV</a>
+					<a href="<?= get_category_link(17) ?>">Monovolumen y SUV </a>
 				</li>
 				<li>
 					<a href="<?= get_category_link(18) ?>">Turismo</a>
@@ -37,34 +34,30 @@
 				<img src="<?php echo TEMPLATEURI;?>/images/vehiculos/Monovolumen.png"/>
 			</a>
 		</div>
-
 		<div class="col-md-4 col-xs-6 item">
 			<a href="<?= get_category_link(13) ?>"  data-type="Y4">
 				<span class="category_name"><?php echo ('Camper');?></span>
 				<img src="<?php echo TEMPLATEURI;?>/images/vehiculos/Camper.png"/>
 			</a>
 		</div>
-
 		<div class="col-md-4 col-xs-6 item">
 			<a href="<?= get_category_link(11) ?>"  data-type="Y2">
-				<span class="category_name"><?php echo ('Furg. pequeñas');?></span>
+				<span class="category_name"><?php echo ('Pequeñas');?></span>
 				<img src="<?php echo TEMPLATEURI;?>/images/vehiculos/Furgonetas_peq.png"/>
 			</a>
 		</div>
 		<div class="col-md-4 col-xs-6 item">
 			<a href="<?= get_category_link(12) ?>"  data-type="Y5">
-				<span class="category_name"><?php echo ('Furg. grandes');?></span>
+				<span class="category_name"><?php echo ('Grandes');?></span>
 				<img src="<?php echo TEMPLATEURI;?>/images/vehiculos/Furgonetas.png"/>
 			</a>
 		</div>
-
 		<div class="col-md-4 col-xs-6 item">
 			<a href="<?= get_category_link(16) ?>"  data-type="Y3">
 				<span class="category_name"><?php echo ('Carrozado');?></span>
 				<img src="<?php echo TEMPLATEURI;?>/images/vehiculos/Carrozado.png"/>
 			</a>
 		</div>
-		
 		<div class="col-md-4 col-xs-6 item">
 			<a href="<?= get_category_link(14) ?>"  data-type="Y7">
 				<span class="category_name"><?php echo ('Isotermo');?></span>
@@ -74,7 +67,7 @@
 
 		<div class="col-md-4 col-xs-6 item">
 			<a href="<?= get_category_link(17) ?>"  data-type="Y4">
-				<span class="category_name"><?php echo ('Monovolumen / SUV');?></span>
+				<span class="category_name"><?php echo ('Monovolumen y SUV');?></span>
 				<img src="<?php echo TEMPLATEURI;?>/images/vehiculos/suv.png"/>
 			</a>
 		</div>

@@ -7,10 +7,6 @@
  * @package Acme Themes
  * @subpackage Construction Field
  */
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
 get_header();
 global $construction_field_customizer_all_values;
 ?>
@@ -36,7 +32,7 @@ global $construction_field_customizer_all_values;
 		</header>
 	</div>
 </div-->
-<div id="content" class="site-content container clearfix category category-search">
+<div id="content" class="site-content container clearfix category">
 	<?php
 	$sidebar_layout = construction_field_sidebar_selection();
 	if( 'both-sidebar' == $sidebar_layout ) {
@@ -47,26 +43,20 @@ global $construction_field_customizer_all_values;
 		<main id="main" class="site-main" role="main">
 		<?php
 		if ( have_posts() ) :
-				//echo "<h1>".$_SESSION['lastCategory']." -> ".$_GET['sfid']."</h1>";
-				while ( have_posts() ) :
-					the_post();
-					$categories = get_the_category(get_the_ID());
-					$cat = $categories[0]->cat_ID;
-					if ( (isset($_GET['sfid']) && isset($_SESSION['lastCategory']) && in_category($_SESSION['lastCategory'], get_the_ID())) || !isset($_GET['sfid']) ) :
-					echo '<div class="col-md-4 col-xs-12 ">';
-					
 
-					/*
-                     * Include the Post-Format-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
-					get_template_part( 'template-parts/content', get_post_format() );
-					echo '</div>';
-					else:
-						//the_post();
-					endif;
-				endwhile;
+			/* Start the Loop */
+			while ( have_posts() ) :
+				echo '<div class="col-md-4 col-xs-12">';
+				the_post();
+
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_format() );
+				echo '</div>';
+			endwhile;
 
 			/**
 			 * construction_field_action_posts_navigation hook

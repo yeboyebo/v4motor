@@ -287,20 +287,13 @@ jQuery(document).ready(function($){
         window.location = '/?s=' +  jQuery("#searchHome").val();
      });
 
-   //amplio galeria de ficha de producto
-   jQuery(".carousel-inner img").click(function(){
-
-        if(jQuery(window).width() > 667){
-            if(jQuery(".carousel-inner").hasClass("active")){
-                //cierro
-                jQuery(".carousel-inner").css("height","65vh");
-                jQuery(".carousel-inner").removeClass("active");
-            }else{
-                jQuery(".carousel-inner").css("height","100%");
-                jQuery(".carousel-inner").addClass("active");
-            }
+    jQuery(".carousel-inner").click(function(){
+        if(jQuery(this).hasClass("carousel-inner-opened")){
+            jQuery(this).removeClass("carousel-inner-opened");
+        }else{
+            jQuery(this).addClass("carousel-inner-opened");
         }
-   });
+    });
 
 });
 

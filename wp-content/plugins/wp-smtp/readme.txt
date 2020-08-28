@@ -1,22 +1,22 @@
 === WP SMTP ===
 Contributors: yehudah
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=yehuda@myinbox.in&item_name=Donation+for+WPSMTP
-Tags: wp smtp,smtp,mail,email,phpmailer,mailer,wp mail,gmail,yahoo,mail smtp,ssl,tls
+Tags: wp smtp,smtp,mail,email,logs,mailer,wp mail,gmail,yahoo,mail smtp,ssl,tls
 License: GPLv2
 Requires at least: 2.7
-Tested up to: 5.4
-Stable tag: 1.1.11
+Tested up to: 5.5
+Stable tag: 1.2.1
 
-WP SMTP can help us to send emails via SMTP instead of the PHP mail() function. 
+WP SMTP & Email logger can help us to send emails via SMTP instead of the PHP mail() function.
 
 == Description ==
 
-WP SMTP can help us to send emails via SMTP instead of the PHP mail() function.
-It adds a settings page to "Dashboard"->"Settings"->"WP SMTP" where you can configure the email settings.
-There are some examples on the settings page, you can click the corresponding icon to view (such as "Gmail""Yahoo!""Microsoft""163""QQ").
-If the field "From" was not a valid email address, or the field "SMTP Host" was left blank, it will not reconfigure the wp_mail() function.
+WP SMTP & Email Log, can help us to send emails via SMTP instead of the PHP mail() function.
+It fixes your email deliverability by reconfiguring WordPress to use a proper SMTP provider when sending emails, and keep an
+**Email log** so you can know when your emails are failing to deliver and why.
 
-= Do you want more advanced SMTP mailer?
+
+= Do you want more advanced SMTP mailer? =
 
 * Built-in **importer for WP SMTP settings**.
 * Universal SMTP for every service.
@@ -38,18 +38,22 @@ WP SMTP plugin was originally created by BoLiQuan. It is now owned and maintaine
 1. Download and extract `wp-smtp.zip` to `wp-content/plugins/`
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. "Dashboard"->"Settings"->"WP SMTP"
-4. There are some examples on the settings page, you can click the corresponding icon to view.(such as "Gmail""Yahoo!""Microsoft""163""QQ") 
-5. For more information of this plugin, please visit: [Plugin Homepage](https://wpsmtpmail.com/ "WP SMTP").
+4. For more information of this plugin, please visit: [Plugin Homepage](https://wpsmtpmail.com/ "WP SMTP").
 
 == Installation ==
 
 1. Download and extract `wp-smtp.zip` to `wp-content/plugins/`
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. "Dashboard"->"Settings"->"WP SMTP"
-4. There are some examples on the settings page, you can click the corresponding icon to view.(such as "Gmail""Yahoo!""Microsoft""163""QQ") 
-5. For more information of this plugin, please visit: [Plugin Homepage](https://wpsmtpmail.com/ "WP SMTP").
+4. For more information of this plugin, please visit: [Plugin Homepage](https://wpsmtpmail.com/ "WP SMTP").
 
 == Changelog ==
+
+= 1.2 =
+Fixed: handle the mail parts as needed
+
+= 1.2 =
+New and shiny mail logger.
 
 = 1.1.11 =
 All good, still maintained, just update some info
@@ -95,18 +99,24 @@ https://wpsmtpmail.com/v1-1-10-wp-smtp-is-back/
 
 == Screenshots ==
 
-1. "Gmail.com" settings
-2. "Yahoo.com" settings
-3. "Live.com" settings
-4. "163.com" settings
-5. "QQ.com" settings
+1. Main settings
+2. Test settings
+3. Mail Logs
+4. Collapse to show mail body
+5. Select rows to delete
 
 
 == Frequently Asked Questions ==
 
-You can sumbit it in https://wordpress.org/support/plugin/wp-smtp, if It's urgent like a bug submit it here: https://wpsmtpmail.com/contact/
+= What is the different between this and Post SMTP =
+
+WP SMTP is more SMTP delivery focus and has less features:
+
+* If you don't want or need to use API.
+* No failed mails notifications.
+* No fallback server.
+
+For any other question you can submit it in https://wordpress.org/support/plugin/wp-smtp,
+if It's urgent like a bug submit it here: https://wpsmtpmail.com/contact/
 
 
-== Upgrade Notice ==
-
-Please visit http://boliquan.com/wp-smtp/

@@ -226,7 +226,7 @@ class Search_Filter_Admin {
 							$fields_arr[] = $field['type'];
 						}
 
-						$fields_text = implode($fields_arr, ", ");
+						$fields_text = implode($fields_arr);
 						echo $fields_text;
 					}
 
